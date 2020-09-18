@@ -1,9 +1,3 @@
-// assign character sets to the password criteria - what lowercase letters, uppercase letters, numbers and special characters should be used in the password?
-var arrayNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var arraySpecial = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
-var arrayLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var arrayUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
 // Assignment Code - provided in assignment code clone - document.querySelector goes to the html and finds the first occurance of ID "generate" which is the generate button.
 var generateBtn = document.querySelector("#generate");
 
@@ -38,26 +32,36 @@ function generatePassword() {
     }
   
 //create password by going to character sets and select random characters.  store in finishedPassword. push this to the screen for the user to see.
-var password
+var finishedPassword
+
 
 //stores user selected character arrays
 var arrayTotal = []
 
   // if user selected/confirmed a number, push number
-  var arrayNum = [] 
+  if (confirmNum === true) {
+  var arrayNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; 
   arrayTotal.push(arrayNum)
+}
 
-  // if user selecgted/confirmed a special character, push special char
-  var arraySpecial = []
+  // if user selected/confirmed a special character, push special char
+  if (confirmSpecial) {
+  var arraySpecial = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
   arrayTotal.push(arraySpecial)
-
+  }
+  debugger;
   // if user selected/confirmed an upper case character, push upper char
-  var arrayUpper = []
+  if (confirmUpper) {
+  var arrayUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   arrayTotal.push(arrayUpper)
+  }
 
   //if user selected/confirmd a lowercase char, push lower char
-  var arrayLower = []
+  if (confirmLower) {
+  var arrayLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   arrayTotal.push(arrayLower)
+  console.log(arrayTotal) // return the array total
+  }
 
 // Loop through our "arrayTotal" which holds all of the arrays that were ".push()" into our "arrayTotal" array (arrayNum, arraySpecial, arrayLower, arrayUpper)
 for(var i = 0; i < arrayTotal.length; i++) {
