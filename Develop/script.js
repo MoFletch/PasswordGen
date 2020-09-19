@@ -12,8 +12,6 @@ var confirmUpper
 var confirmSpecial
 var randomNum
 
-
-
 //writePassword function launches generatePassword so we need to create a password function that returns info that is stored in password variable and this code must be above writePassword function or it won't start
 
 //prompt for password criteria after clicking #generate html button -- options include password length and character types
@@ -40,58 +38,58 @@ function generatePassword() {
           confirmNum = confirm("Click on OK to select numeric characters or CANCEL to skip.");
           confirmSpecial = confirm("Click OK to select special characters or CANCEL to skip.");
         }
-     //stores user selected character arrays
-      var selectedArrayNum = [];
-      console.log(selectedArrayNum);
-      var selectedArraySpecial = [];
-      console.log(selectedArraySpecial);
-      var selectedArrayUpper = [];
-      console.log(selectedArrayUpper);
-      var selectedArrayLower = [];
-      console.log(selectedArrayLower);
+      //stores user selected character arrays
+        const selectedArrayNum = [];
+        console.log(selectedArrayNum);
+        const selectedArraySpecial = [];
+        console.log(selectedArraySpecial);
+        const selectedArrayUpper = [];
+        console.log(selectedArrayUpper);
+        const selectedArrayLower = [];
+        console.log(selectedArrayLower);
 
-      // if user selected/confirmed a number, push number into storage
-      if (confirmNum === true) {
-      var arrayNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; 
-      selectedArrayNum.push(arrayNum)
-    }
-      
-      // if user selected/confirmed a special character, push special char
-      if (confirmSpecial === true) {
-      var arraySpecial = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
-      selectedArraySpecial.push(arraySpecial)
+        // if user selected/confirmed a number, push number into storage
+        if (confirmNum === true) {
+        var arrayNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; 
+        selectedArrayNum.push(arrayNum)
       }
-      
-      // if user selected/confirmed an upper case character, push upper char
-      if (confirmUpper === true) {
-      var arrayUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-      selectedArrayUpper.push(arrayUpper)
-      }
-    
-      //if user selected/confirmed a lowercase char, push lower char
-      if (confirmLower === true) {
-      var arrayLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-      selectedArrayLower.push(arrayLower)
-      }   
-    // results in [1, 2, 3, 4, 5, 6, 7, 8, 9]
-      var passwordOptions = selectedArrayNum.concat(selectedArraySpecial, selectedArrayLower, selectedArrayUpper);
-      console.log(passwordOptions)
-
-      // Loop through "passwordOptions" which holds all of the characters selected and choose random password based on length of password user chose.
         
-      // Empty string to be filled based on for loop selecting random characters from the array
+        // if user selected/confirmed a special character, push special char
+        if (confirmSpecial === true) {
+        var arraySpecial = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
+        selectedArraySpecial.push(arraySpecial)
+        }
+        
+        // if user selected/confirmed an upper case character, push upper char
+        if (confirmUpper === true) {
+        var arrayUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        selectedArrayUpper.push(arrayUpper)
+        }
+      
+        //if user selected/confirmed a lowercase char, push lower char
+        if (confirmLower === true) {
+        var arrayLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        selectedArrayLower.push(arrayLower)
+        }   
+      // results in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        const passwordOptions = selectedArrayNum.concat(selectedArraySpecial, selectedArrayLower, selectedArrayUpper);
+        console.log(passwordOptions)
 
-      var randomPassword = ""
-      
-      for (var i = 0; i < passwordLength; i++) {
-        randomPassword = randomPassword + passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
-        console.log(randomPassword)
+        // Loop through "passwordOptions" which holds all of the characters selected and choose random password based on length of password user chose.
+          
+        // Empty string to be filled based on for loop selecting random characters from the array
+
+        var randomPassword = ""
+        
+        for (var i = 0; i < passwordLength; i++) {
+          randomPassword = randomPassword + passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
+          console.log(randomPassword)
+        }
+        return randomPassword;
       }
-      return randomPassword;
-    }
-      // Write password to the #password input - provided in assignment code clone; moved from top to bottom.  Reads from top to bottom. writePassword will be launched after clicking button, which will launch generatePassword function, which will return data stored in password (labeled passwordText.value) that will be written in the password ID in html - the password box.
-      
-      //.value gets/sets value of html element - in this case the password is the value set in the password ID in html.  
+        // Write password to the #password input - provided in assignment code clone; moved from top to bottom.  Reads from top to bottom. writePassword will be launched after clicking button, which will launch generatePassword function, which will return data stored in password (labeled passwordText.value) that will be written in the password ID in html - the password box.
+        
+        //.value gets/sets value of html element - in this case the password is the value set in the password ID in html.  
   
 // Write password to the #password input
 function writePassword() {
