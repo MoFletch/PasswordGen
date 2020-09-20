@@ -39,37 +39,41 @@ function generatePassword() {
           confirmSpecial = confirm("Click OK to select special characters or CANCEL to skip.");
         }
       //stores user selected character arrays
-        const selectedArrayNum = [];
+        var selectedArrayNum = [];
         console.log(selectedArrayNum);
-        const selectedArraySpecial = [];
+        var selectedArraySpecial = [];
         console.log(selectedArraySpecial);
-        const selectedArrayUpper = [];
+        var selectedArrayUpper = [];
         console.log(selectedArrayUpper);
-        const selectedArrayLower = [];
+        var selectedArrayLower = [];
         console.log(selectedArrayLower);
 
         // if user selected/confirmed a number, push number into storage
         if (confirmNum === true) {
         var arrayNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; 
-        selectedArrayNum.push(arrayNum)
+        selectedArrayNum = selectedArrayNum.concat(arrayNum);
+        //selectedArrayNum.push(arrayNum)
       }
         
         // if user selected/confirmed a special character, push special char
         if (confirmSpecial === true) {
         var arraySpecial = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
-        selectedArraySpecial.push(arraySpecial)
+        selectedArraySpecial = selectedArraySpecial.concat(arraySpecial);
+        //selectedArraySpecial.push(arraySpecial)
         }
         
         // if user selected/confirmed an upper case character, push upper char
         if (confirmUpper === true) {
         var arrayUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-        selectedArrayUpper.push(arrayUpper)
+        selectedArrayUpper = selectedArrayUpper.concat(arrayUpper);
+        //selectedArrayUpper.push(arrayUpper)
         }
       
         //if user selected/confirmed a lowercase char, push lower char
         if (confirmLower === true) {
         var arrayLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        selectedArrayLower.push(arrayLower)
+        selectedArrayLower = selectedArrayLower.concat(arrayLower);
+        //selectedArrayLower.push(arrayLower)
         }   
       // results in [1, 2, 3, 4, 5, 6, 7, 8, 9]
         const passwordOptions = selectedArrayNum.concat(selectedArraySpecial, selectedArrayLower, selectedArrayUpper);
