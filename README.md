@@ -1,9 +1,9 @@
-# PasswordGenerator
+# PasswordGen
 
-### Password Generator is a repository holding the HTML, CSS and Javascript code, as well as image assets for the password generator.  This is the assignment for Module 3 end of lesson Challenge.  
+### PasswordGen is a repository holding the HTML, CSS and Javascript code, as well as image assets for the password generator.  This is the assignment for Module 3 end of lesson Challenge.  
 
 ## Maureen Fletcher Personal Portfolio Landing Page
-[![Image of Maureen Fletcher website landing page](assets/images/SiteImage.png](https://mofletch.github.io/PasswordGen/ "Password Generator")
+[![Image of Maureen Fletcher website landing page](assets/images/SiteImage.png)](https://mofletch.github.io/PasswordGen/ "Password Generator")
 
 ## Introduction
 #### The Challenge requested the student create a password generator using best practices learned in Module 3, as well as integrating previous learnings.  This includes Javascript, HTML and CSS, ensuring use of new learnings to include random selection, if and while statements and other basic Javascript functions.
